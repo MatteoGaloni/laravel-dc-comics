@@ -2,7 +2,6 @@
 
 @section('content')
     <div id="slider_wrapper">
-        <button id="current_btn" class="btn btn-primary border-primary text-white">CURRENT SERIES</button>
         <div class="container p-2 d-flex flex-wrap">
             @foreach ($comics as $comic)
                 <div class="my_slide p-2">
@@ -17,6 +16,9 @@
             <a href="{{ route('comics.create') }}">
                 <button id="load_btn" class="btn btn-primary border-primary text-white">ADD NEW COMICS</button>
             </a>
+            {{-- <a href="{{ route('comics.update') }}">
+                <button id="load_btn" class="btn btn-primary border-primary text-white">UPDATE COMICS</button>
+            </a> --}}
         </div>
     </div>
 @endsection

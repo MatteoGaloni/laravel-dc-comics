@@ -85,7 +85,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $someLinks = config('someLinks');
+        return view('comics.update', compact('comic', 'someLinks'));
     }
 
     /**
@@ -94,8 +95,9 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Comic $comic)
     {
-        //
+        // $someLinks = config('someLinks');
+        // return view('comics.delete', compact('someLinks'));
     }
 }
