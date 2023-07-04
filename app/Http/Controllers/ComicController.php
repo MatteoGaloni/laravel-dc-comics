@@ -85,8 +85,8 @@ class ComicController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $someLinks = config('someLinks');
-        return view('comics.update', compact('comic', 'someLinks'));
+        // $someLinks = config('someLinks');
+        // return view('comics.update', compact('comic', 'someLinks'));
     }
 
     /**
@@ -95,9 +95,11 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Comic $comic)
+    public function destroy($id)
     {
-        // $someLinks = config('someLinks');
-        // return view('comics.delete', compact('someLinks'));
+        $comic = Comic::findOrFail($id);
+        $comic->delete();
+
+        return redirect()->route('comics.index')->with('success', 'Il Comic è stato cancellato con successo.');
     }
 }
