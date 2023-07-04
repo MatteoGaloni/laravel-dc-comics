@@ -12,7 +12,11 @@
                     </a>
                 </div>
             @endforeach
-            <button id="load_btn" class="btn btn-primary border-primary text-white">LOAD MORE</button>
+        </div>
+        <div class="container">
+            <a href="{{ route('comics.create') }}">
+                <button id="load_btn" class="btn btn-primary border-primary text-white">ADD NEW COMICS</button>
+            </a>
         </div>
     </div>
 @endsection

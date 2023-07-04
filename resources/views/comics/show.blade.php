@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div id="comics_container" class="container">
+    <div id="comics_container" class="container my-4">
         <div class="row">
             <div class="col-8">
                 <h3>{{ $comic->title }}</h3>
