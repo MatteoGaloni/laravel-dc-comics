@@ -2,16 +2,23 @@
 
 @section('content')
     <div id="comics_container" class="container my-4">
+        <a href="{{ route('comics.edit', $comic->id) }}">
+            <button id="load_btn" class="btn btn-primary border-primary text-white">Edit Comic Book</button>
+        </a>
+        <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+            @csrf
+            @method('DELETE')
+            <button onclick='remove()' id="alert_btn" class="btn btn-warning border-primary text-white" type="submit">Delete
+                Comic Book</button>
+        </form>
         <div class="row">
             <div class="col-8">
                 <h3>{{ $comic->title }}</h3>
-                <div class="d-flex justify-content-between bg-success">
-                    <div class="d-flex justify-content-between">
+                <div class="card d-flex justify-content-between bg-success">
+                    <div class="card-body d-flex justify-content-between">
                         <span>U.S. Price: {{ $comic->price }}</span>
                         <span>Available</span>
                     </div>
-                    <div>Check availability</div>
-
                 </div>
                 <p>{{ $comic->description }}</p>
             </div>
@@ -40,4 +47,10 @@
             </div>
         </div>
     </div>
+    <script>
+        let button = document.getElementById("alert_btn");
+        button.addEventListener("click", function() {
+            confirm("Sei sicuro di cancellare?");
+        });
+    </script>
 @endsection

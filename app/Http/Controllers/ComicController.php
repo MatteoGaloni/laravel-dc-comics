@@ -71,9 +71,10 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Comic $comic)
     {
-        //
+        $someLinks = config('someLinks');
+        return view('comics.edit', compact('comic', 'someLinks'));
     }
 
     /**
@@ -83,10 +84,21 @@ class ComicController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Comic $comic)
     {
-        // $someLinks = config('someLinks');
-        // return view('comics.update', compact('comic', 'someLinks'));
+        $data = $request->all();
+
+        $comic->title = $data['title'];
+        $comic->description = $data['description'];
+        $comic->thumb = $data['thumb'];
+        $comic->price = $data['price'];
+        $comic->series = $data['series'];
+        $comic->sale_date = $data['sale_date'];
+        $comic->type = $data['type'];
+        $comic->update();
+
+        // $comic->update($data);
+        return redirect()->route('comics.index');
     }
 
     /**

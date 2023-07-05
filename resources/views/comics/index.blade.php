@@ -9,17 +9,12 @@
                         <img src="{{ $comic['thumb'] }}" alt="$thumb['series']">
                         <h6 class="slide_series p-2">{{ $comic['series'] }}</h6>
                     </a>
-                    <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-primary border-primary text-white" type="submit">Delete</button>
-                    </form>
                 </div>
             @endforeach
         </div>
         <div class="container">
             <a href="{{ route('comics.create') }}">
-                <button id="load_btn" class="btn btn-primary border-primary text-white">ADD NEW COMICS</button>
+                <button id="load_btn" class="btn btn-primary border-primary text-white">Add New Comic Book</button>
             </a>
         </div>
     </div>

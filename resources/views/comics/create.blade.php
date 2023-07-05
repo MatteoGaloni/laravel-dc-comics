@@ -23,7 +23,7 @@
                     <input class="form-control" type="text" name="series">
 
                     <label for="name">Sale_date</label>
-                    <input class="form-control" type="date" value="" name="sale_date">
+                    <input class="form-control" type="text" value="" name="sale_date">
 
                     <label for="name">Type</label>
                     <select class="form-select" type="text" name="type">

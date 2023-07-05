@@ -5,23 +5,19 @@
                 <div class="left_column m-2 p-1">
                     <h6>DC COMICS</h6>
                     <ul class="list-unstyled">
-                        <a class="text-decoratione-none">
-                            <li><small>link</small></li>
-                            <li><small>link</small></li>
-                            <li><small>link</small></li>
-                            <li><small>link</small></li>
-                            <li><small>link</small></li>
-                            <li><small>link</small></li>
-                            <li><small>link</small></li>
-                        </a>
+                        @foreach ($someLinks as $link)
+                            <a class="link" href="">
+                                <li><small>{{ $link['text'] }}</small></li>
+                            </a>
+                        @endforeach
 
                     </ul>
                     <h6>SHOP</h6>
                     <ul class="list-unstyled">
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Shop DC</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Shop DC Collectibles</small></li>
                         </a>
 
@@ -30,37 +26,37 @@
                 <div class="center_column m-2 p-1">
                     <h6>DC</h6>
                     <ul class="list-unstyled">
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Terms Of Use</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Privacy policy (New)</small></li>
                         </a>
-                        <a href="#">
+                        <a class="link" href="#">
                             <li><small>Ad Choises</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Advertising</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Jobs</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Subscriptions</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Talent Workshops</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>CPSC Certificates</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Ratings</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Shop Help</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>Contacts Us</small></li>
                         </a>
                     </ul>
@@ -69,19 +65,19 @@
                 <div class="right_column m-2 p-1">
                     <h6>SITES</h6>
                     <ul class="list-unstyled">
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>DC</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>MAD Magazine</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>DC Kids</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>DC Universe</small></li>
                         </a>
-                        <a class="text-decoratione-none" href="#">
+                        <a class="link" href="#">
                             <li><small>DC Power Visa</small></li>
                         </a>
                     </ul>
@@ -100,31 +96,31 @@
                     <a class="p-2 text-decoration-none" href="#">
                         <li>FOLLOW US</li>
                     </a>
-                    <a class="text-decoratione-none p-2" href="#">
+                    <a class="link p-2" href="#">
                         <li>
                             <img class="my_footer_img" src="{{ Vite::asset('resources/img/footer-facebook.png') }}"
                                 alt="">
                         </li>
                     </a>
-                    <a class="text-decoratione-none p-2" href="#">
+                    <a class="link p-2" href="#">
                         <li>
                             <img class="my_footer_img" src="{{ Vite::asset('resources/img/footer-twitter.png') }}"
                                 alt="">
                         </li>
                     </a>
-                    <a class="text-decoratione-none p-2" href="#">
+                    <a class="link p-2" href="#">
                         <li>
                             <img class="my_footer_img" src="{{ Vite::asset('resources/img/footer-youtube.png') }}"
                                 alt="">
                         </li>
                     </a>
-                    <a class="text-decoratione-none p-2" href="#">
+                    <a class="link p-2" href="#">
                         <li>
                             <img class="my_footer_img" src="{{ Vite::asset('resources/img/footer-pinterest.png') }}"
                                 alt="">
                         </li>
                     </a>
-                    <a class="text-decoratione-none p-2" href="#">
+                    <a class="link p-2" href="#">
                         <li>
                             <img class="my_footer_img" src="{{ Vite::asset('resources/img/footer-periscope.png') }}"
                                 alt="">
