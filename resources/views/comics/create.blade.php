@@ -23,12 +23,13 @@
                     <input class="form-control" type="text" name="series">
 
                     <label for="name">Sale_date</label>
-                    <input class="form-control" type="text" name="sale_date">
+                    <input class="form-control" type="date" value="" name="sale_date">
 
                     <label for="name">Type</label>
-                    <input class="form-control" type="text" name="type">
-
-                    <input class="form-control mt-4 btn btn-primary" type="submit" value="Invia">
+                    <select class="form-select" type="text" name="type">
+                        <option value="graphic novel" selected>Graphic Novel</option>
+                        <option value="comic book">Comic Book</option>
+                        <input class="form-control mt-4 btn btn-primary" type="submit" value="Invia">
                 </form>
 
             </div>
