@@ -20,7 +20,7 @@
                         <span>Available</span>
                     </div>
                 </div>
-                <p>{{ $comic->description }}</p>
+                <p> {{ $comic->description }}</p>
             </div>
             <div class="col-4">
                 <img class="img-fluid" src="{{ $comic->thumb }}" alt="">

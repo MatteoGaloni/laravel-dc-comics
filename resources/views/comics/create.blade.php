@@ -8,10 +8,16 @@
                     @csrf
 
                     <label for="name">Title</label>
-                    <input class="form-control" type="text" name="title">
+                    <input class="form-control" type="text" value="{{ old('title') }}" name="title">
+                    @error('title')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
 
                     <label for="name">Description</label>
                     <textarea rows="10" class="form-control" name="description"></textarea>
+                    @error('description')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
 
                     <label for="name">Thumb</label>
                     <input class="form-control" type="text" name="thumb">
@@ -30,6 +36,7 @@
                         <option value="graphic novel" selected>Graphic Novel</option>
                         <option value="comic book">Comic Book</option>
                         <input class="form-control mt-4 btn btn-primary" type="submit" value="Invia">
+                    </select>
                 </form>
 
             </div>

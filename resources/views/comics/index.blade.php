@@ -6,7 +6,7 @@
             @foreach ($comics as $comic)
                 <div class="my_slide p-2">
                     <a href="{{ route('comics.show', $comic->id) }}">
-                        <img src="{{ $comic['thumb'] }}" alt="$thumb['series']">
+                        <img src="{{ $comic['thumb'] }}" alt="{{ $comic->title }}">
                         <h6 class="slide_series p-2">{{ $comic['series'] }}</h6>
                     </a>
                 </div>

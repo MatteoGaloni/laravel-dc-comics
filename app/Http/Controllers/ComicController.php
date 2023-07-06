@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ComicController extends Controller
 {
@@ -30,6 +31,14 @@ class ComicController extends Controller
         return view('comics.create', compact('someLinks'));
     }
 
+    // private function validateProduct($data)
+    // {
+    //     $validator = Validator::make ($data, [
+    //         'title' => 'required|min:5|max:50',
+    //         'description' => 'required|min:10|max:50',
+    //     ], $messaggi)->validate;
+    // }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -39,6 +48,11 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+
+        $request->validate([
+            'title' => 'required|min:5|max:50',
+            'description' => 'required|min:10|max:50',
+        ]);
 
         $newComic = new Comic();
         $newComic->title = $data['title'];
