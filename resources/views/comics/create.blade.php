@@ -14,22 +14,34 @@
                     @enderror
 
                     <label for="name">Description</label>
-                    <textarea rows="10" class="form-control" name="description"></textarea>
+                    <textarea rows="10" class="form-control" name="description">{{ old('description') }}</textarea>
                     @error('description')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
 
                     <label for="name">Thumb</label>
-                    <input class="form-control" type="text" name="thumb">
+                    <input class="form-control" type="text" value="{{ old('thumb') }}" name="thumb">
+                    @error('thumb')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
 
                     <label for="name">Price</label>
-                    <input class="form-control" type="text" name="price">
+                    <input class="form-control" type="text" value="{{ old('price') }}" name="price">
+                    @error('price')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
 
                     <label for="name">Series</label>
-                    <input class="form-control" type="text" name="series">
+                    <input class="form-control" type="text" value="{{ old('series') }}" name="series">
+                    @error('series')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
 
                     <label for="name">Sale_date</label>
                     <input class="form-control" type="text" value="" name="sale_date">
+                    @error('sale_date')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
 
                     <label for="name">Type</label>
                     <select class="form-select" type="text" name="type">
@@ -37,6 +49,9 @@
                         <option value="comic book">Comic Book</option>
                         <input class="form-control mt-4 btn btn-primary" type="submit" value="Invia">
                     </select>
+                    @error('type')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
                 </form>
 
             </div>
