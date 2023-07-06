@@ -37,10 +37,10 @@ class ComicController extends Controller
             $data,
             [
                 'title' => 'required|min:5|max:50',
-                'description' => 'nullable|min:10|max:70',
+                'description' => 'nullable|min:10|max:1000',
                 'thumb' => 'nullable|url',
-                'price' => 'nullable|numeric|between:1,99999999999999',
-                'series' => 'nullable|min:3|max:20',
+                'price' => 'required|regex:/^\d{1,13}(\.\d{1,4})?$/',
+                'series' => 'required|min:3|max:20',
                 'sale_date' => 'nullable|date_format:Y-m-d',
                 'type' => 'required|min:10|max:50',
             ],
@@ -49,10 +49,11 @@ class ComicController extends Controller
                 "title.min" => "Mi dispiace il titolo deve essere di almeno 5 caratteri",
                 "title.max" => "Il titolo deve essere almeno di almeno 50 caratteri",
                 "description.min" => "La descrizione deve essere almeno di almeno 10 caratteri",
-                "description.max" => "Il titolo deve essere almeno di almeno 70 caratteri",
+                "description.max" => "La descrizione deve essere inferiore hai 1000 caratteri",
                 "thumb.url" => "Devi inserire un url ",
-                "price.numeric" => "Il prezzo deve essere di tipo numerico",
-                "price.between" => "Il prezzo deve essere un numero positivo",
+                "price.regex" => "Il prezzo deve essere di tipo numerico",
+                // "price.between" => "Il prezzo deve essere un numero positivo",
+                "series.required" => "Mi dispiace il campo deve essere popolato",
                 "series.min" => "Mi dispiace il campo deve essere di almeno 3 caratteri",
                 "series.max" => "Mi dispiace il campo deve essere di almeno 20 caratteri",
                 "sale_date.date_format" => "Mi dispiace quella che hai inserito non è una data di tipo Y-m-d",
@@ -118,7 +119,7 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
+        $data = $this->validateComic($request->all());
 
         $comic->title = $data['title'];
         $comic->description = $data['description'];

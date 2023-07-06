@@ -6,7 +6,12 @@
             @foreach ($comics as $comic)
                 <div class="my_slide p-2">
                     <a href="{{ route('comics.show', $comic->id) }}">
-                        <img src="{{ $comic['thumb'] }}" alt="{{ $comic->title }}">
+                        @if ($comic['thumb'])
+                            <img src="{{ $comic['thumb'] }}" alt="{{ $comic->title }}">
+                        @else
+                            <img src="https://www.emme2servizi.it/wp-content/uploads/2020/12/no-image.jpg"
+                                alt="{{ $comic->title }}">
+                        @endif
                         <h6 class="slide_series p-2">{{ $comic['series'] }}</h6>
                     </a>
                 </div>

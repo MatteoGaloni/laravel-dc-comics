@@ -38,7 +38,7 @@
                     @enderror
 
                     <label for="name">Sale_date</label>
-                    <input class="form-control" type="text" value="" name="sale_date">
+                    <input class="form-control" type="text" value="{{ old('sale_date') }}" name="sale_date">
                     @error('sale_date')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
