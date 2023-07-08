@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string('series')->nullable();
             $table->string('sale_date')->nullable();
             $table->string('type')->nullable();
-            $table->json('artists')->nullable();
+            // $table->json('artists')->nullable();
             $table->json('writers')->nullable();
 
 

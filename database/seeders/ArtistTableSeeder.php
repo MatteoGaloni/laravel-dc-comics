@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Artist;
+use App\Models\Comic;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -17,10 +18,15 @@ class ArtistTableSeeder extends Seeder
     {
         $comics = config('comics');
 
-        foreach ($comics as $comic => $value) {
-            foreach ($comic['artists'] as $artist) {
+        // $comics_ids= Comic::pluck('id')->toArray(); 
+
+        foreach ($comics as $comic) {
+
+            foreach ($comic['artists'] as $artist => $value) {
                 $newArtist = new Artist();
                 $newArtist->name = $artist;
+                $newArtist->comic_id = $artist + 1;
+                $newArtist->save();
             }
         }
     }
