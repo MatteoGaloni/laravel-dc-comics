@@ -46,9 +46,10 @@
                 <hr>
             </div>
             <div class="col_6 card">
-
-                {{-- <div>{{ $comic->artists }}</div> --}}
-                <div>{{ $comic->writers }}</div>
+                @foreach ($comic->artists as $artist)
+                    <div>{{ $artist->name }}</div>
+                @endforeach
+                {{-- <div>{{ $comic->writers }}</div> --}}
 
             </div>
         </div>

@@ -20,12 +20,13 @@ class ArtistTableSeeder extends Seeder
 
         // $comics_ids= Comic::pluck('id')->toArray(); 
 
-        foreach ($comics as $comic) {
+        foreach ($comics as $key => $comic) {
 
-            foreach ($comic['artists'] as $artist => $value) {
+            foreach ($comic['artists'] as $artist) {
                 $newArtist = new Artist();
                 $newArtist->name = $artist;
-                $newArtist->comic_id = $artist + 1;
+                $newArtist->comic_id = $key + 1;
+
                 $newArtist->save();
             }
         }
