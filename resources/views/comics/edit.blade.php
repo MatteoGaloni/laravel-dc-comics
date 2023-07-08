@@ -49,6 +49,7 @@
                     <select class="form-select" type="text" name="type">
                         <option value="graphic novel" @selected($comic->type == 'graphic novel')>Graphic Novel</option>
                         <option value="comic book" @selected($comic->type == 'comic book')>Comic Book</option>
+
                         <input class="form-control mt-4 btn btn-primary" type="submit" value="Invia">
                 </form>
 

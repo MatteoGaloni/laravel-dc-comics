@@ -8,7 +8,7 @@
             <div class="nav_right">
                 <ul class="d-flex list-unstyled">
                     @foreach ($someLinks as $link)
-                        <a class="link p-1" href="">
+                        <a class="link p-1 fw-bold" href="">
                             <li>{{ $link['text'] }}</li>
                         </a>
                     @endforeach

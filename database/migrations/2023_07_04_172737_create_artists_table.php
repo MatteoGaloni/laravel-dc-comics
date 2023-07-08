@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('artists', function (Blueprint $table) {
             $table->id();
 
-            $table->foreignId('comic-id');
+            $table->foreignId('comic_id');
             $table->string('name');
 
             $table->timestamps();
+
+            $table->foreign('comic_id')->references('id')->on('comics');
         });
     }
 
@@ -31,5 +33,8 @@ return new class extends Migration
     public function down()
     {
         Schema::dropIfExists('artists');
+        Schema::table('artists', function (Blueprint $table) {
+            $table->dropForeign('artists_comic_id_foreign');
+        });
     }
 };

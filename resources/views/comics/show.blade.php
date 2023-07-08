@@ -45,6 +45,12 @@
                 </div>
                 <hr>
             </div>
+            <div class="col_6 card">
+
+                <div>{{ $comic->artists }}</div>
+                <div>{{ $comic->writers }}</div>
+
+            </div>
         </div>
     </div>
     <script>
